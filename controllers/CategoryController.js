@@ -31,7 +31,8 @@ export default {
     },
     list: async (req, res, next) => {
         try {
-            const reg = await models.Category.find({});
+            let value = req.query.value;
+            const reg = await models.Category.find({$or:[{'name':new RegExp(value,'i')},{'description':new RegExp(value,'i')}]},{createdAt:0});
             res.status(200).json(reg);
         } catch (e) {
             res.status(500).send({
