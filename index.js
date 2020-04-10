@@ -4,6 +4,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
 import mongoose from 'mongoose'
+import router from './routes';
 
 //* Variables
 const port = 3000;
@@ -23,8 +24,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname,'public')))
 
-
-
+//* endpoint
+app.use('/api',router);
 
 //* Port Config
 app.set('port',process.env.PORT || port);
