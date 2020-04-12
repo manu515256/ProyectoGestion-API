@@ -4,7 +4,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
 import mongoose from 'mongoose'
-import router from './routes';
+import router from './src/routes';
 
 //* Variables
 const port = 3000;
@@ -22,7 +22,7 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use(express.static(path.join(__dirname,'public')))
+app.use(express.static(path.join(__dirname,'src/public')))
 
 //* endpoint
 app.use('/api',router);
