@@ -2,7 +2,7 @@ import tokenService from '../services/token';
 
 //* se otorga acceso dependiente de su rol
 export default {
-    verifyUsuario: async (req,res,next)=>{
+    verifyUser: async (req,res,next)=>{
         if(!req.headers.token){
             return res.status(404).send({message:'No token found'});
         }
