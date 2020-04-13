@@ -6,7 +6,7 @@ const articleSchema = new Schema({
     name:{type:String, maxlength:50,unique:true, required:true},
     description:{type:String,maxlength:255},
     sell_price:{type:Number,required:true},
-    stock:{type:Number,required:true},
+    stock:{type:String,required:true},
     state:{type: Number, default:1},
     createdAt:{type:Date, defaut:Date.now} 
 });
