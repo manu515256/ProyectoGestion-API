@@ -1,6 +1,8 @@
 import tokenService from '../services/token';
 
 //* se otorga acceso dependiente de su rol
+//* roles por numero
+//! ADMIN: 1, ENCARGADO: 2, VENDEDOR: 3, USUARIO: 4
 export default {
     verifyUser: async (req,res,next)=>{
         if(!req.headers.token){
@@ -47,5 +49,3 @@ export default {
         }
     },
 }
-// roles por numero
-//! ADMIN: 1, ENCARGADO: 2, VENDEDOR: 3, USUARIO: 4

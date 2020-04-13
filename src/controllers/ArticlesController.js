@@ -30,6 +30,24 @@ export default {
             next(e);
         }
     },
+    queryBarcode: async (req, res, next) => {
+        try {
+            const reg = await models.Article.findOne({ code: req.query.code })
+            .populate('categoria',{name:1});
+            if (!reg) {
+                res.status(404).send({
+                    message: 'This entry does not exist'
+                });
+            } else {
+                res.status(200).json(reg);
+            }
+        } catch (e) {
+            res.status(500).send({
+                message: 'An error ocurred in the request'
+            });
+            next(e);
+        }
+    },
     list: async (req, res, next) => {
         try {
             let value = req.query.value;

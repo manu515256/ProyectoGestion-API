@@ -1,5 +1,6 @@
 import models from '../models';
-
+    //* Roles por tipo de persona
+    //! CLIENTE TIPO 1, PROVEEDOR TIPO 2
 export default {
     add: async (req, res, next) => {
         try {
@@ -42,8 +43,6 @@ export default {
             next(e);
         }
     },
-    //? CLIENTE TIPO 1, PROVEEDOR TIPO 2
-
     listClient: async (req, res, next) => {
         try {
             let value = req.query.value;

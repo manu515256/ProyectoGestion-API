@@ -5,6 +5,7 @@ const router = routerx();
 
 router.post('/add',auth.verifyEncargado,articlesController.add);
 router.get('/query',auth.verifyEncargado,articlesController.query);
+router.get('/queryBarcode',auth.verifyUser,articlesController.queryBarcode);
 router.get('/list',auth.verifyEncargado,articlesController.list);
 router.put('/update',auth.verifyEncargado,articlesController.update);
 router.delete('/remove',auth.verifyEncargado,articlesController.remove);
